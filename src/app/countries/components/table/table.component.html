@@ -1,0 +1,21 @@
+
+<table *ngIf="countries.length > 0">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Flag</th>
+            <th (click)="sortByName()"><span class="byName">Name</span></th>
+            <th (click)="sortByPopulation()"><span class="byPopulation">Population</span></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let country of countries | table:byName:byPopulation ;let i = index">
+            <td>{{i + 1}}</td>
+            <td><img [src]="country.flags.svg" alt=""></td>
+            <td>{{country.name}}</td>
+            <td>{{country.population | number}}</td>
+            <td><a routerLink="/countries/country/cr">More...</a></td>
+        </tr>
+    </tbody>
+</table>

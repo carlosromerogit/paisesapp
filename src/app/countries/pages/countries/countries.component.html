@@ -1,0 +1,7 @@
+<app-search (valueEmitter)="fetchCountry($event)" [placeholder]="placeholder"></app-search>
+<hr>
+<div *ngIf="ifError" class="warn">
+    No se pudo encontrar algo con ese término.
+</div>
+<app-table [countries]="countries"></app-table>
+<app-table *ngIf="countries.length == 0" [countries]="AllCountries"> </app-table>

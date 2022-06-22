@@ -1,0 +1,41 @@
+table{
+    width: 100%;
+    border-collapse: collapse;
+}
+table thead tr{
+    background-color: black;
+}
+
+table th{
+    text-align: left;
+}
+
+table tr{
+    border-bottom: 1px solid rgba(255, 255, 255, 0.10);
+}
+
+table tbody tr:nth-of-type(even){
+    background-color: rgba(51, 51, 51, 0.541);
+}
+table tbody tr:nth-of-type(odd){
+    background-color: #1e1e1e;
+}
+table tbody tr td{
+    color: rgba(255, 255, 255, 0.9);
+}
+
+table td,
+table th{
+    padding: 1rem 0.5rem;
+}
+a{
+    color: white;
+}
+img{
+    width: 42px;
+    height: auto;
+}
+
+.byName{
+    cursor: pointer;
+}
