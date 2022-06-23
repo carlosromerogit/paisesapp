@@ -1,0 +1,7 @@
+<h2>Country</h2>
+<div *ngIf="!country; else divCountry">Espere...</div>
+<ng-template #divCountry>
+    <article>
+        <h2>{{country.name}}</h2>
+    </article>
+</ng-template>

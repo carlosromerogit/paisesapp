@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Country } from '../interfaces/country.interface';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -34,8 +35,12 @@ export class CountryService {
             })
   }
 
-  searchByCapital(query:string){
+  searchByCapital(query:string): Observable<Country[]>{
     return this.http.get<Country[]>(`https://restcountries.com/v2/capital/${query}`)
+  }
+
+  searchCountryByCode(query: string): Observable<Country>{
+    return this.http.get<Country>(`https://restcountries.com/v2/alpha/${query}`)
   }
 
   refresh(){

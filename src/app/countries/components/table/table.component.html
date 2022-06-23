@@ -15,7 +15,7 @@
             <td><img [src]="country.flags.svg" alt=""></td>
             <td>{{country.name}}</td>
             <td>{{country.population | number}}</td>
-            <td><a routerLink="/countries/country/cr">More...</a></td>
+            <td><a [routerLink]="['/countries/country', country.alpha2Code]">More...</a></td>
         </tr>
     </tbody>
 </table>
