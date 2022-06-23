@@ -34,6 +34,10 @@ export class CountryService {
             })
   }
 
+  searchByCapital(query:string){
+    return this.http.get<Country[]>(`https://restcountries.com/v2/capital/${query}`)
+  }
+
   refresh(){
     this.countries = [];
     this.getAllCountries();

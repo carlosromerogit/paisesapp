@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Country } from '../../interfaces/country.interface';
+import { CountryService } from '../../services/country.service';
 
 @Component({
   selector: 'app-downtown',
@@ -7,15 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DowntownComponent implements OnInit {
 
-  placeholder: string = 'Search downtown...';
+  placeholder: string = 'Search by capital...';
 
-  constructor() { }
+  countries: Country[]=[];
+
+  constructor(private countryService: CountryService) { }
 
   ngOnInit(): void {
   }
 
-  fetchDowntown(query:string){
-    console.log(query)
+  fetchByCapital(query:string){
+    this.countryService.searchByCapital(query)
+        .subscribe(countries => this.countries = countries)
   }
 
 }
