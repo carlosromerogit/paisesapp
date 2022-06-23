@@ -24,7 +24,5 @@ export class SearchComponent implements OnInit {
     this.valueEmitter.emit(value);
     this.InputValue.nativeElement.value = '';
   }
-  refresh(){
-    this.countryService.refresh();
-  }
+ 
 }

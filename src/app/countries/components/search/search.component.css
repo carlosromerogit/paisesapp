@@ -14,7 +14,3 @@ input:focus-visible{
 input::placeholder{
     color: rgba(255, 255, 255, 0.524);
 }
-span{
-    margin-left: 0.5rem;
-    cursor: pointer;
-}

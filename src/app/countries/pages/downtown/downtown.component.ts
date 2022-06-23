@@ -13,14 +13,24 @@ export class DowntownComponent implements OnInit {
 
   countries: Country[]=[];
 
+  get ifError(){
+    return this.countryService.ifError;
+  }
+
   constructor(private countryService: CountryService) { }
 
   ngOnInit(): void {
   }
 
   fetchByCapital(query:string){
+    this.countryService.ifError = false;
     this.countryService.searchByCapital(query)
-        .subscribe(countries => this.countries = countries)
+        .subscribe(countries => {
+          this.countries = countries
+        }, (err)=>{
+            console.log(err.message)
+            this.countryService.ifError = true;
+        })
   }
 
 }

@@ -1,4 +1,5 @@
 <app-search (valueEmitter)="fetchCountry($event)" [placeholder]="placeholder"></app-search>
+<span (click)="refresh()" class="refresh">Refresh</span>
 <hr>
 <div *ngIf="ifError" class="warn">
     No se pudo encontrar algo con ese término.

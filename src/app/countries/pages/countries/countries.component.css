@@ -1,3 +1,7 @@
 .warn{
     color: #E74C3C;
 }
+span{
+    margin-left: 0.5rem;
+    cursor: pointer;
+}
