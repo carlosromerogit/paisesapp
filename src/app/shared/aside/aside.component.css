@@ -20,6 +20,9 @@ li{
 li:hover{
     background-color: rgba(255, 255, 255, 0.171);
 }
+.active{
+    background-color: rgba(255, 255, 255, 0.100);
+}
 a{
     display: block;
     padding: 0.5rem 2rem;

@@ -7,9 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AsideComponent implements OnInit {
 
+  active:string = 'countries';
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+  activate(param:string){
+    this.active = param;
   }
 
 }

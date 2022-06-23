@@ -1,13 +1,13 @@
 <aside>
     <h2>PaisesApp</h2>
     <ul>
-        <li>
+        <li (click)="activate('countries')" [ngClass]="{ 'active': active === 'countries' }">
             <a routerLink="">Countries</a>
         </li>
-        <li>
+        <li (click)="activate('capital')" [ngClass]="{ 'active': active === 'capital' }">
             <a routerLink="countries/downtown">Capital</a>
         </li>
-        <li>
+        <li (click)="activate('regions')" [ngClass]="{ 'active': active === 'regions' }">
             <a routerLink="countries/regions">Regions</a>
         </li>
     </ul>
