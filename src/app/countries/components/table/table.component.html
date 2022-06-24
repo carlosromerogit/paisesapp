@@ -10,7 +10,7 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let country of countries | table:byName:byPopulation ;let i = index">
+        <tr #trow *ngFor="let country of countries | table:byName:byPopulation | byPopulation:byPopulation ;let i = index">
             <td>{{i + 1}}</td>
             <td><img [src]="country.flags.svg" alt=""></td>
             <td>{{country.name}}</td>

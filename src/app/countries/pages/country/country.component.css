@@ -1,14 +1,30 @@
 article{
     background-color: #333;
     padding: 0.5rem;
+    padding-bottom: 1rem;
     border-radius: 10px;
     box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.9);
 }
-h2{
+h2,
+h3{
     padding: 0.5rem;
     margin: 0px;
 }
 article > h2{
     padding: 0px;
     margin: 0px;
+}
+.grid-section{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+}
+img{
+    width: 100%;
+    border-radius: 0.2rem;
+    box-shadow: 2px 3px 4px rgba(0, 0, 0, 0.9);
+}
+ul{
+    margin: 0px;
+    padding-inline-start: 1rem;
+    list-style: none;
 }

@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import {  Component, Input, OnInit, ViewChildren, ElementRef, QueryList } from '@angular/core';
 import { Country } from '../../interfaces/country.interface';
 
 @Component({
@@ -10,15 +10,16 @@ export class TableComponent implements OnInit {
 
   @Input() countries: Country[] = [];
 
-  
 
   byName: string = 'a-z';
 
-  byPopulation: string = 'higher';
+  byPopulation: string = 'default';
 
   constructor() { }
+ 
 
   ngOnInit(): void {
+ 
   }
 
   sortByName(){
@@ -29,9 +30,11 @@ export class TableComponent implements OnInit {
     }
   }
   sortByPopulation(){
-    if(this.byPopulation == 'higher'){
+    if(this.byPopulation == 'default'){
+      this.byPopulation = 'higher';
+    }else if(this.byPopulation == 'higher'){
       this.byPopulation = 'lower';
-    }else if(this.byPopulation == 'lower'){
+    }else if(this.byPopulation === 'lower'){
       this.byPopulation = 'higher';
     }
   }

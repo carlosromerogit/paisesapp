@@ -42,6 +42,9 @@ export class CountryService {
   searchCountryByCode(query: string): Observable<Country>{
     return this.http.get<Country>(`https://restcountries.com/v2/alpha/${query}`)
   }
+  searchCountriesByRegion(query:string): Observable<Country[]>{
+    return this.http.get<Country[]>(`https://restcountries.com/v2/region/${query}`)
+  }
 
   refresh(){
     this.countries = [];

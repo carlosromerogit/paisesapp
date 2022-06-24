@@ -3,5 +3,21 @@
 <ng-template #divCountry>
     <article>
         <h2>{{country.name}}</h2>
+        <hr>
+        <div class="grid-section">
+            <div>
+                <h3>Info:</h3>
+                <ul>
+                    <li>Capital: {{country.capital}}</li>
+                    <li>Subregion: {{country.subregion}}</li>
+                    <li>Region: {{country.region}}</li>
+                    <li>Population: {{country.population | number}}</li>
+                    <li>Languages: {{country.languages[0].name}}</li>
+                </ul>
+            </div>
+            <div>
+              <img [src]="country.flags.svg">
+            </div>
+        </div>
     </article>
 </ng-template>

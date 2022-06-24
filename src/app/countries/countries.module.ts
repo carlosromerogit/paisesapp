@@ -9,6 +9,7 @@ import { CountriesComponent } from './pages/countries/countries.component';
 import { SearchComponent } from './components/search/search.component';
 import { TableComponent } from './components/table/table.component';
 import { TablePipe } from './components/table.pipe';
+import { ByPopulationPipe } from './components/by-population.pipe';
 
 
 @NgModule({
@@ -20,6 +21,7 @@ import { TablePipe } from './components/table.pipe';
     SearchComponent,
     TableComponent,
     TablePipe,
+    ByPopulationPipe,
   ],
   imports: [
     CommonModule,

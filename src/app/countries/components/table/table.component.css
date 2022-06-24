@@ -36,6 +36,7 @@ img{
     height: auto;
 }
 
-.byName{
+.byName,
+.byPopulation{
     cursor: pointer;
 }

@@ -1,4 +1,7 @@
 <h2>Regions</h2>
 <hr>
-<span *ngFor="let region of regions">{{region}}</span>
-<app-table></app-table>
+<span *ngFor="let region of regions" 
+       (click)="fetchCountries(region)"
+       (click)="activateRegion(region)"
+       [ngClass]="{'active': activeRegion === region}">{{region | titlecase}}</span>
+<app-table [countries]="countries"></app-table>
