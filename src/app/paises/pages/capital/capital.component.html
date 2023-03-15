@@ -1,0 +1,14 @@
+<app-search [label]="label" (emitirQuery)="procesarQuery($event)"></app-search>
+<div class="spinner-container">
+  <div *ngIf="isLoading; else p" class="spinner-border" role="status">
+    <span class="visually-hidden">Loading...</span>
+  </div>
+</div>
+<ng-template #p>
+  <app-table
+    class="tableIf"
+    *ngIf="paises.length"
+    [paises]="paises"
+  ></app-table>
+</ng-template>
+<app-err-message *ngIf="errorMessage"></app-err-message>

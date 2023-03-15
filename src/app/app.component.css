@@ -1,0 +1,21 @@
+#app-header {
+  display: flex;
+  justify-content: center;
+}
+.app-container {
+  flex-grow: 1;
+  display: flex;
+}
+
+#app-sidebar {
+  flex-shrink: 0;
+  flex-basis: 200px;
+
+  background-color: #f1f3f5;
+  color: #343a40;
+}
+
+.router {
+  flex-grow: 1;
+  padding: 0.5rem;
+}

@@ -1,1 +1,27 @@
 /* You can add global styles to this file, and also import other style files */
+* {
+  padding: 0px;
+  margin: 0px;
+}
+body {
+  margin: 0px;
+  font-family: sans-serif;
+}
+#app-root {
+  display: flex;
+  flex-direction: column;
+
+  height: 100vh;
+}
+ul {
+  list-style: none;
+  padding: 0px;
+  margin: 0px;
+}
+.spinner-container {
+  display: flex;
+  justify-content: center;
+}
+.tableIf {
+  flex-grow: 1;
+}
