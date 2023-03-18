@@ -3,6 +3,14 @@
   gap: 20px;
   align-items: center;
 }
+.ver-pais-loading {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+p {
+  margin: 0;
+}
 h2 {
   margin: 0px;
 }

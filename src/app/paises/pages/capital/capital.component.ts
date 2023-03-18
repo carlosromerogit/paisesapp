@@ -9,7 +9,7 @@ import { PaisesService } from '../../services/paises.service';
   styleUrls: ['./capital.component.css'],
 })
 export class CapitalComponent {
-  label: string = 'capital';
+  label: string = 'por capital';
   paises: Pais[] = [];
   isLoading: boolean = false;
   errorMessage: boolean = false;

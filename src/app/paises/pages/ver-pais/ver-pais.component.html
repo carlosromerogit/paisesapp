@@ -1,4 +1,10 @@
-<div>
+<div *ngIf="!pais; else p" class="ver-pais-loading">
+  <div class="spinner-border spinner-border-sm" role="status">
+    <span class="visually-hidden">Loading...</span>
+  </div>
+  <p>Cargando....</p>
+</div>
+<ng-template #p>
   <div class="pais__header">
     <h2>{{ pais.name.common }}</h2>
     <img [src]="pais.flags.png" [alt]="pais.flags.alt" />
@@ -22,11 +28,12 @@
       {{ pais.population | number }}
     </strong>
   </p>
-  <p>
+  <p *ngIf="pais.borders">
     Fronteras:
     <strong>
       {{ pais.borders }}
     </strong>
   </p>
-</div>
-<hr />
+
+  <hr />
+</ng-template>

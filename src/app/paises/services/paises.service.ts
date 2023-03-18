@@ -24,4 +24,10 @@ export class PaisesService {
       `https://restcountries.com/v3.1/alpha/${codigo}`
     );
   }
+
+  obtenerPaisPorRegion(region: string): Observable<Pais[]> {
+    return this.http.get<Pais[]>(
+      `https://restcountries.com/v3.1/region/${region}`
+    );
+  }
 }

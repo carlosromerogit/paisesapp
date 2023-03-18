@@ -11,7 +11,7 @@ import { Pais } from '../../interfaces/pais.interface';
 })
 export class VerPaisComponent implements OnInit {
   pais!: Pais;
-
+  isLoading: boolean = false;
   constructor(
     private activatedRoute: ActivatedRoute,
     private paisService: PaisesService
