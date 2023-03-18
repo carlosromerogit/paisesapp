@@ -14,7 +14,10 @@ export class RegionComponent {
 
   paises: Pais[] = [];
 
-  constructor(private paisesService: PaisesService) {}
+  constructor(private paisesService: PaisesService) {
+    this.active = localStorage.getItem('region') || '';
+    this.paises = JSON.parse(localStorage.getItem('paisesPorRegion')!) || [];
+  }
 
   activate(region: string) {
     this.active = region;
@@ -28,6 +31,9 @@ export class RegionComponent {
     this.paisesService.obtenerPaisPorRegion(region).subscribe((resp) => {
       this.isLoading = false;
       this.paises = resp;
+
+      localStorage.setItem('region', this.active);
+      localStorage.setItem('paisesPorRegion', JSON.stringify(this.paises));
     });
   }
 }

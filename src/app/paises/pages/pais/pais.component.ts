@@ -15,7 +15,9 @@ export class PaisComponent {
   isLoading: boolean = false;
   errorMessage: boolean = false;
 
-  constructor(private paisesService: PaisesService) {}
+  constructor(private paisesService: PaisesService) {
+    this.paises = JSON.parse(localStorage.getItem('paises')!) || [];
+  }
   procesarQuery(query: string) {
     this.paises = [];
     this.isLoading = true;
@@ -31,6 +33,7 @@ export class PaisComponent {
         this.isLoading = false;
         if (!paises.length) this.errorMessage = true;
         this.paises = paises;
+        localStorage.setItem('paises', JSON.stringify(this.paises));
       });
   }
 }

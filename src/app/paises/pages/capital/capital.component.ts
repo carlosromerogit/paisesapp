@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import { catchError, of } from 'rxjs';
 import { Pais } from '../../interfaces/pais.interface';
 import { PaisesService } from '../../services/paises.service';
@@ -14,7 +14,9 @@ export class CapitalComponent {
   isLoading: boolean = false;
   errorMessage: boolean = false;
 
-  constructor(private paisesService: PaisesService) {}
+  constructor(private paisesService: PaisesService) {
+    this.paises = JSON.parse(localStorage.getItem('paisesPorCapital')!) || [];
+  }
 
   procesarQuery(query: string) {
     this.errorMessage = false;
@@ -30,6 +32,7 @@ export class CapitalComponent {
         this.isLoading = false;
         if (!paises.length) this.errorMessage = true;
         this.paises = paises;
+        localStorage.setItem('paisesPorCapital', JSON.stringify(this.paises));
       });
   }
 }
