@@ -18,4 +18,10 @@ export class PaisesService {
       `https://restcountries.com/v3.1/capital/${capital}`
     );
   }
+
+  obtenerPaisPorCodigo(codigo: string): Observable<Pais[]> {
+    return this.http.get<Pais[]>(
+      `https://restcountries.com/v3.1/alpha/${codigo}`
+    );
+  }
 }

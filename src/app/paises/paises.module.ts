@@ -7,6 +7,7 @@ import { VerPaisComponent } from './pages/ver-pais/ver-pais.component';
 import { SearchComponent } from './components/search/search.component';
 import { TableComponent } from './components/table/table.component';
 import { ErrMessageComponent } from './components/err-message/err-message.component';
+import { AppRoutingModule } from '../app-routing.module';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,6 @@ import { ErrMessageComponent } from './components/err-message/err-message.compon
     ErrMessageComponent,
   ],
   exports: [PaisComponent, CapitalComponent, RegionComponent, VerPaisComponent],
-  imports: [CommonModule],
+  imports: [CommonModule, AppRoutingModule],
 })
 export class PaisesModule {}
